@@ -2,65 +2,141 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Isso faz o site se adaptar a celulares -->
     <title>Futuro Sustentável - Roberta Jarschel</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Conecta o CSS -->
 </head>
 <body>
+    <!-- MENU DE NAVEGAÇÃO - FICA NO TOPO -->
+    <nav class="menu">
+        <ul>
+            <li><a href="#inicio" class="active">Início</a></li>
+            <li><a href="#oque">O que é?</a></li>
+            <li><a href="#maleficios">Malefícios</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#solucao">Solução</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <nav>
-            <div class="logo">EcoProdução</div>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">O que é?</a></li>
-                <li><a href="#maleficios">Impactos</a></li>
-                <li><a href="#beneficios">Benefícios</a></li>
-                <li><a href="#solucao">Solução</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <!-- CONTEÚDO PRINCIPAL DO SITE -->
     <main>
-        <section id="home" class="hero">
-            <h1>Futuro Sustentável</h1>
-            <p>Equilíbrio entre produção e meio ambiente</p>
-            <button id="btnInterativo">Clique para uma dica verde!</button>
+        <!-- SEÇÃO 1: INÍCIO (PÁGINA 1) -->
+        <section id="inicio" class="section">
+            <div class="container">
+                <h1 class="titulo-principal">🌱 Futuro Sustentável</h1>
+                <p class="subtitulo">Equilíbrio entre produção e meio ambiente</p>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Natureza sustentável" class="imagem-destaque">
+                    <p class="texto-destaque">"O desenvolvimento sustentável não é apenas possível, é necessário."</p>
+                    <p class="autora">- Roberta Eduarda Jarschel • 2º Ano EM</p>
+                </div>
+            </div>
         </section>
 
-        <section id="sobre" class="content-section">
-            <h2>O que é o Equilíbrio Sustentável?</h2>
-            <p>É a capacidade de produzir o que a sociedade precisa sem esgotar os recursos naturais para as futuras gerações.</p>
+        <!-- SEÇÃO 2: O QUE É? (PÁGINA 2) -->
+        <section id="oque" class="section">
+            <div class="container">
+                <h2 class="titulo-secao">🔍 O que é Futuro Sustentável?</h2>
+                <div class="conteudo-flex">
+                    <div class="texto">
+                        <p>É um modelo de desenvolvimento que busca equilibrar:</p>
+                        <ul class="lista-verde">
+                            <li>📊 <strong>Crescimento econômico</strong> - Produção eficiente</li>
+                            <li>🌍 <strong>Preservação ambiental</strong> - Recursos naturais</li>
+                            <li>👥 <strong>Bem-estar social</strong> - Qualidade de vida</li>
+                        </ul>
+                        <p class="citacao">"Atender às necessidades do presente sem comprometer as gerações futuras"</p>
+                    </div>
+                    <div class="imagem">
+                        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Equilíbrio" class="imagem-card">
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="maleficios" class="content-section light-green">
-            <h2>Os Malefícios da Produção Desenfreada</h2>
-            <ul>
-                <li>Poluição do ar e dos oceanos.</li>
-                <li>Escassez de matérias-primas naturais.</li>
-                <li>Aquecimento global e mudanças climáticas.</li>
-            </ul>
+        <!-- SEÇÃO 3: MALEFÍCIOS (PÁGINA 3) -->
+        <section id="maleficios" class="section">
+            <div class="container">
+                <h2 class="titulo-secao">⚠️ Malefícios do Modelo Atual</h2>
+                <div class="grid-cards">
+                    <div class="card-efeito" onclick="mostrarAlerta('poluicao')">
+                        <h3>🏭 Poluição</h3>
+                        <p>Emissão de gases estufa e contaminação de rios</p>
+                        <span class="saiba-mais">Clique para detalhes →</span>
+                    </div>
+                    <div class="card-efeito" onclick="mostrarAlerta('desmatamento')">
+                        <h3>🌲 Desmatamento</h3>
+                        <p>Perda de biodiversidade e habitats naturais</p>
+                        <span class="saiba-mais">Clique para detalhes →</span>
+                    </div>
+                    <div class="card-efeito" onclick="mostrarAlerta('consumo')">
+                        <h3>📦 Consumo Excessivo</h3>
+                        <p>Esgotamento de recursos naturais</p>
+                        <span class="saiba-mais">Clique para detalhes →</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="beneficios" class="content-section">
-            <h2>Benefícios de um Futuro Verde</h2>
-            <ul>
-                <li>Preservação da biodiversidade.</li>
-                <li>Melhoria na qualidade de vida e saúde.</li>
-                <li>Economia circular e novas oportunidades de emprego.</li>
-            </ul>
+        <!-- SEÇÃO 4: BENEFÍCIOS (PÁGINA 4) -->
+        <section id="beneficios" class="section">
+            <div class="container">
+                <h2 class="titulo-secao">✨ Benefícios da Sustentabilidade</h2>
+                <div class="lista-beneficios">
+                    <div class="item-beneficio">
+                        <span class="icone">🌿</span>
+                        <div>
+                            <h3>Ar mais puro</h3>
+                            <p>Redução da poluição e mais áreas verdes</p>
+                        </div>
+                    </div>
+                    <div class="item-beneficio">
+                        <span class="icone">💧</span>
+                        <div>
+                            <h3>Água preservada</h3>
+                            <p>Manejo responsável dos recursos hídricos</p>
+                        </div>
+                    </div>
+                    <div class="item-beneficio">
+                        <span class="icone">🌱</span>
+                        <div>
+                            <h3>Futuro garantido</h3>
+                            <p>Recursos para as próximas gerações</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="solucao" class="content-section green-dark">
-            <h2>A Solução: Caminhos Possíveis</h2>
-            <p>A transição para energias renováveis, o consumo consciente e leis ambientais mais rígidas são a chave para o sucesso.</p>
+        <!-- SEÇÃO 5: SOLUÇÃO (PÁGINA 5) -->
+        <section id="solucao" class="section">
+            <div class="container">
+                <h2 class="titulo-secao">💡 Soluções para um Futuro Sustentável</h2>
+                <div class="solucao-principal">
+                    <div class="solucao-texto">
+                        <p class="destaque-verde">A chave está no equilíbrio entre:</p>
+                        <ul class="lista-check">
+                            <li>✅ Energias renováveis (solar, eólica)</li>
+                            <li>✅ Agricultura sustentável</li>
+                            <li>✅ Economia circular (reciclagem)</li>
+                            <li>✅ Consumo consciente</li>
+                        </ul>
+                        <button id="botaoDica" class="botao-verde">Clique para uma dica verde!</button>
+                        <p id="mensagemDica" class="mensagem-dica"></p>
+                    </div>
+                    <div class="solucao-imagem">
+                        <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Solução sustentável">
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- RODAPÉ -->
     <footer>
-        <p>Desenvolvido por Roberta Eduarda Jarschel - 2º Ano EM</p>
+        <p>🌍 Site desenvolvido por Roberta Eduarda Jarschel • 2º Ano EM • Trabalho Escolar</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Conecta o JavaScript -->
 </body>
 </html>

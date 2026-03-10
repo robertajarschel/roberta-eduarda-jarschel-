@@ -1,103 +1,346 @@
-/* Configurações Gerais */
+/* style.css - TODAS AS CORES SÃO TONS DE VERDE */
+
+/* RESET BÁSICO - tira as margens padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f0fdf4; /* Verde bem clarinho */
-    color: #1a3020;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
+    color: #333;
+    background-color: #f0f7f0; /* verde bem clarinho */
 }
 
-/* Menu no Topo */
-header {
-    background-color: #2d6a4f; /* Verde floresta */
-    color: white;
-    padding: 1rem 0;
+/* ===== MENU FIXO NO TOPO ===== */
+.menu {
+    background-color: #2c5f2d; /* verde escuro */
     position: fixed;
-    width: 100%;
     top: 0;
+    width: 100%;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-nav {
+.menu ul {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.nav-links {
-    display: flex;
+    justify-content: center;
     list-style: none;
+    padding: 15px 0;
+    flex-wrap: wrap; /* pro menu quebrar em celular */
 }
 
-.nav-links li a {
+.menu a {
     color: white;
     text-decoration: none;
-    padding: 0 15px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+/* Efeito quando passa o mouse */
+.menu a:hover {
+    background-color: #97cba9; /* verde médio */
+    color: #1a3b1a;
+}
+
+/* Item ativo (destaca a página atual) */
+.menu a.active {
+    background-color: #d4e6b5; /* verde clarinho */
+    color: #1a3b1a;
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+    min-height: 100vh; /* cada seção ocupa a tela toda */
+    padding: 100px 20px 50px; /* espaçamento (respeita o menu fixo) */
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Títulos */
+.titulo-principal {
+    font-size: 3rem;
+    color: #1e4a1e;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    color: #2c5f2d;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #97cba9;
+    padding-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    color: #4a7c4a;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== CARDS E ELEMENTOS ===== */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(44, 95, 45, 0.2);
+    text-align: center;
+}
+
+.imagem-destaque, .imagem-card {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.texto-destaque {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #2c5f2d;
+    margin: 20px 0;
+}
+
+.autora {
+    color: #668f66;
+    font-weight: 500;
+}
+
+/* Listas */
+.lista-verde {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.lista-verde li {
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #e8f3e8;
+    border-left: 5px solid #2c5f2d;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.1rem;
+}
+
+.citacao {
+    font-size: 1.2rem;
+    color: #1e4a1e;
+    background-color: #d4e6b5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Layout flexível */
+.conteudo-flex {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.conteudo-flex > * {
+    flex: 1;
+}
+
+/* Grid para os cards */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card-efeito {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito de hover nos cards */
+.card-efeito:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(44, 95, 45, 0.3);
+    border: 1px solid #97cba9;
+}
+
+.card-efeito h3 {
+    color: #2c5f2d;
+    margin-bottom: 10px;
+}
+
+.saiba-mais {
+    color: #4a7c4a;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 15px;
     font-weight: bold;
 }
 
-/* Banner Principal */
-.hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1350&q=80');
-    background-size: cover;
-    background-position: center;
+/* Lista de benefícios */
+.lista-beneficios {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px;
+}
+
+.item-beneficio {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.icone {
+    font-size: 2rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* Seção solução */
+.solucao-principal {
+    display: flex;
+    gap: 40px;
     align-items: center;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.solucao-texto, .solucao-imagem {
+    flex: 1;
+}
+
+.solucao-imagem img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.lista-check {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.lista-check li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #97cba9;
+    font-size: 1.1rem;
+}
+
+.destaque-verde {
+    font-size: 1.3rem;
+    color: #2c5f2d;
+    font-weight: bold;
+}
+
+/* Botão */
+.botao-verde {
+    background-color: #2c5f2d;
     color: white;
-    text-align: center;
-    margin-top: 60px;
-}
-
-/* Seções de Conteúdo */
-.content-section {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-.light-green { background-color: #d8f3dc; }
-.green-dark { background-color: #1b4332; color: white; }
-
-h2 { margin-bottom: 20px; color: #40916c; }
-.green-dark h2 { color: #95d5b2; }
-
-ul {
-    text-align: left;
-    display: inline-block;
-}
-
-/* Botão Interativo */
-#btnInterativo {
-    padding: 12px 25px;
-    background-color: #52b788;
     border: none;
-    color: white;
-    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: 0.3s;
+    transition: background-color 0.3s;
+    margin: 20px 0;
 }
 
-#btnInterativo:hover {
-    background-color: #b7e4c7;
-    color: #1b4332;
+.botao-verde:hover {
+    background-color: #1e4a1e;
 }
 
-/* Responsividade (Mobile) */
-@media (max-width: 600px) {
-    .nav-links {
-        display: none; /* Esconde o menu em telas muito pequenas para simplificar */
+.mensagem-dica {
+    color: #2c5f2d;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e8f3e8;
+    border-radius: 5px;
+    display: none;
+}
+
+.mensagem-dica.mostrar {
+    display: block;
+}
+
+/* Rodapé */
+footer {
+    background-color: #1e4a1e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===== DESIGN RESPONSIVO ===== */
+@media (max-width: 768px) {
+    /* Para tablets e celulares */
+    
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
     }
-    .hero h1 { font-size: 1.8rem; }
+    
+    .menu a {
+        display: block;
+        padding: 8px 15px;
+        margin: 3px 0;
+    }
+    
+    .titulo-principal {
+        font-size: 2rem;
+    }
+    
+    .titulo-secao {
+        font-size: 1.8rem;
+    }
+    
+    .conteudo-flex, .solucao-principal {
+        flex-direction: column;
+    }
+    
+    .section {
+        padding-top: 150px; /* mais espaço por causa do menu */
+    }
+    
+    .card-efeito {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Para celulares pequenos */
+    
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+    
+    .item-beneficio {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .botao-verde {
+        width: 100%;
+    }
 }
